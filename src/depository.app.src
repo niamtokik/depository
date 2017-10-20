@@ -1,0 +1,13 @@
+{application, depository,
+ [{description, "An alternative to docker registry"}
+ ,{vsn, "0.1.0"}
+ ,{registered, []}
+ ,{mod, { depository_app, []}}
+ ,{applications ,[kernel, stdlib, cowboy ]}
+ ,{env,[]}
+ ,{modules, []}
+ ,{maintainers, ["Mathieu Kerjouan"]}
+ ,{licenses, ["Apache 2.0"]}
+ ,{links, []}
+ ]
+}.
