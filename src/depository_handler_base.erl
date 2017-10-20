@@ -7,6 +7,11 @@
 -compile(export_all).
 
 init(#{ method := <<"GET">>} = Req, Opts) ->
-	depository_handler_default:init(Req, Opts);
+	CodeReturn = 200,
+	DataReturn = <<"{}">>,
+	Headers = #{ <<"content-type">> => <<"application/json">>
+	           , <<"Docker-Distribution-API-Version">> => <<"registry/2.0">> },
+	Response = cowboy_req:reply(CodeReturn, Headers, DataReturn, Req),
+	{ok, Response, Opts};
 init(Req, Opts) ->
 	{ok, Req, Opts}.

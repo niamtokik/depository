@@ -1,0 +1,2 @@
+-module(depository_manifest).
+-compile(export_all).
