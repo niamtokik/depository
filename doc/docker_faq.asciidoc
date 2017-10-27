@@ -1,0 +1,21 @@
+= Docker CLI FAQ
+
+== How to pull an image from private repository?
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+docker pull localhost:8888/docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+== How to push an image to private repository?
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# 1. get an image from the wild
+docker pull docker
+
+# 2. tag this image
+docker tag docker:latest localhost:8888/docker
+
+# 3. you can now push it to your private repository
+docker push localhost:8888/docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
