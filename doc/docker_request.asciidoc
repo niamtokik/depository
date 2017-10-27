@@ -1,0 +1,55 @@
+
+.pull request
+[erlang]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#{ bindings => 
+  #{ name => <<"test">> ,reference => <<"latest">>}
+   , body_length => 0,has_body => false
+   , headers => #{ <<"accept">> => <<"application/json, application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.docker.distribution.manifest.v1+prettyjws">>
+                 , <<"accept-encoding">> => <<"gzip">>
+                 , <<"connection">> => <<"close">>
+                 , <<"host">> => <<"localhost:8888">>
+                 , <<"user-agent">> => <<"docker/17.06.0-ce go/go1.9.2 git-commit/v17.06.0-ce kernel/4.12.13_1 os/linux arch/amd64 UpstreamClient(Docker-Client/unknown-version \\(linux\\))">>}
+   , host => <<"localhost">>
+   , host_info => undefined
+   , method => <<"GET">>
+   , path => <<"/v2/test/manifests/latest">>
+   , path_info => undefined
+   , peer => {{127,0,0,1},16223}
+   , pid => <0.357.0>
+   , port => 8888
+   , qs => <<>>
+   , ref => depository
+   , scheme => <<"http">>
+   , streamid => 1
+   , version => 'HTTP/1.1'
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.push request
+[erlang]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#{bindings => 
+  #{ digest => <<"sha256:b56ae66c29370df48e7377c8f9baa744a3958058a766793f821dadcb144a4647">>
+   , name => <<"docker">>}
+   , body_length => 0 
+   , has_body => false
+   , headers => #{ <<"connection">> => <<"close">>
+                 , <<"host">> => <<"localhost:8888">>
+                 , <<"user-agent">> => <<"docker/17.06.0-ce go/go1.9.2 git-commit/v17.06.0-ce kernel/4.12.13_1 os/linux arch/amd64 UpstreamClient(Docker-Client/unknown-version \\(linux\\))">>}
+                 , host => <<"localhost">> 
+                 , host_info => undefined 
+                 , method => <<"HEAD">>
+                 , path => <<"/v2/docker/blobs/sha256:b56ae66c29370df48e7377c8f9baa744a3958058a766793f821dadcb144a4647">>
+                 , path_info => undefined,
+                 , peer => {{127,0,0,1},16201}
+                 , pid => <0.333.0> 
+                 , port => 8888
+                 , qs => <<>>
+                 , ref => depository
+                 , scheme => <<"http">>
+                 , streamid => 1
+                 , version => 'HTTP/1.1'
+                 }
+    }
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

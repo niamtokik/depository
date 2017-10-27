@@ -8,7 +8,7 @@
 -export([start/2, stop/1]).
 
 start(_StartType, _StartArgs) ->
-	Options = [{port, 8080}],
+	Options = [{port, 8888}],
 	Routes = depository_routes:routes(),
 	Domain = [{'_', Routes}],
 	Compile = cowboy_router:compile(Domain),
