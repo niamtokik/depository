@@ -11,16 +11,49 @@
 %%
 %%--------------------------------------------------------------------
 start() ->
-	gen_server:start(?MODULE, {local, ?MODULE}, [], []).
+	start([]).
+start(_Args) ->
+	start(?MODULE, _Args).
+start(Name, _Args) ->
+	start(Name, _Args, []).
+start(Name, _Args, _Opts) ->
+	gen_server:start({local, Name}, ?MODULE, _Args, _Opts).
 
+%%--------------------------------------------------------------------
+%%
+%%--------------------------------------------------------------------
 start_link() ->
-	gen_server:start_link(?MODULE, {local, ?MODULE}, [], []).
+	start_link([]).
+start_link(_Args) ->
+	start_link(?MODULE, _Args).
+start_link(Name, _Args) ->
+	start_link(Name, _Args, []).
+start_link(Name, _Args, _Opts) ->
+	gen_server:start_link({local, Name}, ?MODULE, _Args, _Opts).
+
+
+%%--------------------------------------------------------------------
+%%
+%%--------------------------------------------------------------------
+stop() ->
+	stop(?MODULE).
+stop(ServerRef) ->
+	gen_server:stop(ServerRef).
+stop(ServerRef, Reason) ->
+	gen_server:stop(ServerRef, Reason, 1000).
+
+%%--------------------------------------------------------------------
+%%
+%%--------------------------------------------------------------------
+restart() ->
+	stop(?MODULE),
+	start().
 
 %%--------------------------------------------------------------------
 %%
 %%--------------------------------------------------------------------
 init(_Args) ->
-	ok.
+	{ok, #{ storage => storage_null }}.
 
 %%--------------------------------------------------------------------
 %%
@@ -84,3 +117,9 @@ code_change(_OldVersion, _State, _Extra) ->
 %%--------------------------------------------------------------------
 unsupported(State) ->
 	{reply, unsupported, State}.
+
+%%--------------------------------------------------------------------
+%% call
+%%--------------------------------------------------------------------
+call(Data) ->
+	gen_server:call(?MODULE, Data).
